@@ -2,6 +2,6 @@ README
 
 Notebooks derzeit auf 1.000 Zeilen begrenzt (zu wenig für Tasks 4.5 und 5.2.1)
 
-Kleinster Cluster zu klein für Task 5.2.1
+Kleinster Cluster zu klein für Task 5.2.1 aber zu groß für Task 5.1.2
 
 Spark Web UI aus Zeppelin nicht ausreichend -> evtl. auf EMR Web UI zurückgreifen
