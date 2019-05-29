@@ -1,0 +1,34 @@
+INSTRUCTION TO SET UP AWS S3 STORAGE FOR ZEPPELIN NOTEBOOKS
+
+see also: https://docs.aws.amazon.com/de_de/emr/latest/ReleaseGuide/emr-configure-apps.html
+
+1.Create the S3 Bucket and folder in which the Zeppelin notebooks should get stored manually before you proceed with this instructions.
+
+2. Set up cluster with instances, name, etc. as needed
+
+3. Clone this cluster and add following configuration within Step 1 -> software configurations -> enter configuration:
+
+CHOOSE THE BUCKET (VALUE OF KEY 'ZEPPELIN_NOTEBOOK_S3_BUCKET') AND FOLDER (VALUE OF KEY 'ZEPPELIN_NOTEBOOK_S3_USER') YOU CREATED AT THE BEGINNING (see 1.)
+
+
+[
+	{
+		"classification":"zeppelin-env",
+		"properties":{
+
+		},
+		"configurations":[
+			{
+				"classification":"export",
+				"properties":{
+					"ZEPPELIN_NOTEBOOK_S3_BUCKET":"cs-spark-basic-training",
+					"ZEPPELIN_NOTEBOOK_S3_USER":"NOTEBOOK_FOLDER_NAME",
+					"ZEPPELIN_NOTEBOOK_STORAGE":"org.apache.zeppelin.notebook.repo.S3NotebookRepo"
+				},
+				"configurations":[
+
+				]
+			}
+		]
+	}
+]
